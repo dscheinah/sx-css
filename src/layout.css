@@ -43,15 +43,18 @@
 
 .sx-content summary {
     cursor: pointer;
-}
-
-.sx-content summary {
     /* To keep it on one line no p is used but the margin should be available. */
     margin-bottom: 1em;
     /* If used with the polyfill, but still render the native indicator. */
     display: list-item;
     overflow: hidden;
 }
+
+.sx-content summary:focus {
+    /* To prevent chrome from rendering the border. */
+    outline: none;
+}
+
 
 /* Just for the polyfill. */
 .sx-content summary:before {
