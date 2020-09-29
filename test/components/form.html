@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>sx-css test form</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <link type="text/css" href="../css/variables.css" rel="stylesheet"/>
+        <link type="text/css" href="../../src/form.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <form class="sx-form">
+            <div class="sx-input">
+                <input type="text" id="text" name="text" placeholder="Placeholder"/>
+                <label for="text">Text</label>
+            </div>
+            <div class="sx-input">
+                <input type="text" id="text-required" name="text" required/>
+                <label for="text-required">Required text</label>
+            </div>
+            <div class="sx-input">
+                <input type="password" id="password" name="password"/>
+                <label for="password">
+                    Password
+                    <small>(this is a hint which takes quite some space)</small>
+                </label>
+            </div>
+            <div class="sx-input">
+                <input type="email" id="email" name="email"/>
+                <label for="email">E-Mail</label>
+            </div>
+            <div class="sx-input">
+                <input type="number" id="number" name="number"/>
+                <label for="number">Number</label>
+            </div>
+            <div class="sx-input">
+                <select id="select" name="select">
+                    <option value=""></option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label for="select">Select</label>
+            </div>
+            <div class="sx-input">
+                <select id="multiselect" name="select" multiple>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label for="multiselect">Select multiple</label>
+            </div>
+            <div class="sx-checkbox">
+                <input type="checkbox" id="checkbox" name="checkbox" value="1"/>
+                <label for="checkbox">Option with quite a long label</label>
+            </div>
+            <div class="sx-multi">
+                <div class="sx-checkbox">
+                    <input type="checkbox" id="checkbox-1" name="checkbox[]" value="1" checked/>
+                    <label for="checkbox-1">Option 1</label>
+                </div>
+                <div class="sx-checkbox">
+                    <input type="checkbox" id="checkbox-2" name="checkbox[]" value="2"/>
+                    <label for="checkbox-2">Option 2</label>
+                </div>
+                <div class="sx-checkbox">
+                    <input type="checkbox" id="checkbox-3" name="checkbox[]" value="3"/>
+                    <label for="checkbox-3">Option 3</label>
+                </div>
+            </div>
+            <div class="sx-multi">
+                <div class="sx-checkbox">
+                    <input type="radio" id="radio-1" name="radio" value="1" checked/>
+                    <label for="radio-1">Option 1</label>
+                </div>
+                <div class="sx-checkbox">
+                    <input type="radio" id="radio-2" name="radio" value="2"/>
+                    <label for="radio-2">Option 2</label>
+                </div>
+                <div class="sx-checkbox">
+                    <input type="radio" id="radio-3" name="radio" value="3"/>
+                    <label for="radio-3">Option 3</label>
+                </div>
+            </div>
+            <div class="sx-input">
+                <textarea id="textarea" name="textarea"></textarea>
+                <label for="textarea">Textarea</label>
+            </div>
+        </form>
+    </body>
+</html>

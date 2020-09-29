@@ -1,0 +1,108 @@
+/* Must be set to allow min-height for the content. */
+.sx-layout, .sx-layout body {
+    height: 100%;
+}
+
+.sx-layout body {
+    min-width: 320px;
+    margin: 0;
+    background: white;
+    font-size: 14px;
+    /* To not have the content flicker on page change. */
+    overflow-y: scroll;
+    /* Give a hint for the font and force a difference to inputs. */
+    font-family: serif;
+}
+
+/* Define a max content width and center the content. */
+.sx-limit {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+/* Do not use the real body, to not accidentally apply styles to temporary injected elements. */
+.sx-body {
+    /* Allow the element to create a scroll but propagate the 100% height to the container inside. */
+    min-height: 100%;
+    /* This allows setting the inner container to always at least full browser height. */
+    display: flex;
+    flex-direction: column;
+}
+
+.sx-content {
+    /* Indicate the max-width with a shadow to the left and right. */
+    box-shadow: 0 0 8px lightgray;
+}
+
+.sx-content h1 {
+    /* The surrounding container already defines a fixed padding for all sides. */
+    margin-top: 0;
+}
+
+.sx-content summary {
+    cursor: pointer;
+}
+
+.sx-content summary {
+    /* To keep it on one line no p is used but the margin should be available. */
+    margin-bottom: 1em;
+    /* If used with the polyfill, but still render the native indicator. */
+    display: list-item;
+    overflow: hidden;
+}
+
+/* Just for the polyfill. */
+.sx-content summary:before {
+    vertical-align: top;
+}
+
+/* Use bold to have it readable despite light color. */
+.sx-content a, .sx-error, .sx-highlight {
+    font-weight: bold;
+}
+
+.sx-content a {
+    text-decoration: none;
+    color: var(--tertiary-color);
+    transition: color .2s;
+}
+
+.sx-content a:hover {
+    color: var(--tertiary-color-highlight);
+}
+
+/* The error messages injected from error responses of the PHP backend. */
+.sx-error {
+    color: var(--secondary-color);
+}
+
+.sx-highlight {
+    color: var(--primary-color);
+}
+
+.sx-container {
+    /* Due to the display flex on the parent, the width must be explicitly reset to full width. */
+    width: 100%;
+    /* Let the content at least grow to full browser height. */
+    flex: 1 0 auto;
+    min-height: 100%;
+}
+
+/* The page rendering never removes pages to not have render dependencies. To avoid positioning hide the pages. */
+.sx-container > * {
+    display: none;
+}
+
+/* The currently active page is always injected to the end of the container. */
+.sx-container > *:last-child {
+    display: block;
+}
+
+@media only screen and (max-width: 480px) {
+    /* Reduce padding as not needed for mobile devices. */
+    .sx-limit {
+        padding: 20px;
+    }
+}

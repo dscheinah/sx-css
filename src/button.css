@@ -1,0 +1,133 @@
+.sx-button button {
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    font-family: sans-serif;
+    padding: .6em;
+    /* To not let the browser split the icon and label. */
+    white-space: nowrap;
+    /* Fix the line-height to make the padding appear equal. */
+    line-height: 1;
+    /* Buttons side by side have a default spacing, but if they break on mobile devices there is none. */
+    margin-bottom: .3em;
+    /* Indicate a control by shadow. */
+    box-shadow: 1px 1px 4px lightgray;
+    /* Use the colors from variables. */
+    background: var(--secondary-color);
+    color: var(--secondary-color-inverse);
+    transition: background .5s;
+}
+
+.sx-button button::-moz-focus-inner {
+    border: 0;
+}
+
+.sx-button button:hover {
+    background: var(--secondary-color-highlight);
+}
+
+/* On click, "push" the buttons by inverting its shadow. */
+.sx-button button:active, .sx-button button:focus {
+    box-shadow: 0 0 2px gray inset;
+    /* Chrome renders a colored outline. */
+    outline: none;
+}
+
+.sx-button-icon {
+    margin-right: .3em;
+}
+
+/* To position buttons on the same line as other contents use a control wrapper. */
+.sx-control {
+    display: flex;
+}
+
+.sx-control > * {
+    width: 100%;
+    /* Needs to match with the button for correct height calculation. */
+    margin-bottom: .3em;
+}
+
+.sx-control > button:last-child {
+    width: auto;
+    flex: 1 0 auto;
+    /* Use rem here to account for the mobile font hack. */
+    margin-left: 1.2rem;
+    /* Do not fill the remaining space. */
+    align-self: flex-start;
+}
+
+/* Actions are buttons to be visible independently from scroll. */
+.sx-actions {
+    position: sticky;
+    bottom: 0;
+    /* To be above table headers (1000) and below menu (10000). */
+    z-index: 2000;
+    /* Use flex to allow multiple elements inside. */
+    display: flex;
+    /* Enforce minimum distance but do not add up with spacing from previous elements. */
+    /* Hack away the shadow from below with mixed negative margin and padding. */
+    margin: 1.5em -.3em 0;
+    /* Some spacing to the remaining content. */
+    /* Add some extra right padding to align with tables. */
+    padding: .5em .9em 0 .3em;
+}
+
+/* Fade out the other content if the actions are in fixed mode of sticky. */
+.sx-actions:before {
+    content: "";
+    position: absolute;
+    /* Start fading above the actions start. */
+    top: -2em;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /* At 50% the start of the actions is reached. So the actions background appears white. */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+}
+
+/* All buttons inside the actions must be relative to have the z-index raised above the pseudo:before. */
+.sx-actions > * {
+    position: relative;
+    /* Never grow, only shrink if needed. */
+    flex: 0 1 auto;
+}
+
+/* Space between the elements but not on the edges. */
+.sx-actions > *:not(:last-child) {
+    margin-right: 20px;
+}
+
+/* A special container inside the action will always fill the remaining space. */
+.sx-actions .sx-fill {
+    width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+    /* Only use icons to reduce the needed size. */
+    .sx-control > button:last-child {
+        font-size: 0;
+        border-radius: 100%;
+        /* This matches with the height and padding of the normal buttons. */
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .sx-button-icon {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    /* Show the button and the special container on separate lines. */
+    .sx-actions {
+        flex-wrap: wrap;
+    }
+
+    /* The special container is more important, so order it on top. */
+    .sx-actions .sx-fill {
+        order: -1;
+        /* Needed for Firefox to get it visible. */
+        z-index: 1;
+    }
+}

@@ -1,0 +1,126 @@
+/* This applies to all inputs (submits are not to be used). */
+.sx-form input, .sx-form textarea, .sx-form select {
+    font-size: 1em;
+    box-sizing: border-box;
+    width: 100%;
+    /* Matches the height with the buttons (font-size + padding) if used in one line. */
+    min-height: 2.2em;
+    padding: .3em;
+    /* Reset the border and replace it with an input-indicating bottom one. */
+    border: none;
+    border-bottom: 1px solid lightgray;
+    border-radius: 0;
+    box-shadow: 0 -1px 0 lightgray inset;
+    /* To have a visual difference to the other text. */
+    font-family: sans-serif;
+    background: rgba(0, 0, 0, .025);
+    /* Chrome renders a colored outline. */
+    outline: none;
+    transition: border-color .2s;
+    /* Needed for long placeholders. */
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.sx-form textarea {
+    /* Do not allow vertical resizing on textarea. */
+    min-width: 100%;
+}
+
+/* Indicate required fields by a bold label. This assumes labels are positioned after the input. */
+.sx-form [required] + label {
+    font-weight: bold;
+}
+
+/* Indicate validation errors with custom style. This also applies to required elements with initial blank value. */
+.sx-form :invalid {
+    border-color: var(--secondary-color);
+}
+
+.sx-form :focus, .sx-checkbox :focus + label {
+    border-color: var(--tertiary-color-highlight);
+}
+
+.sx-form select, .sx-form label, .sx-form [type=checkbox], .sx-form [type=radio] {
+    cursor: pointer;
+}
+
+.sx-form ::placeholder {
+    color: black;
+    opacity: .2;
+}
+
+.sx-form input[type="search"]::-webkit-search-cancel-button {
+    cursor: pointer;
+}
+
+/* Do not use the input type to be flexible with e.g. radio. */
+.sx-checkbox {
+    margin-bottom: 1em;
+    /* Do never wrap the label and keep it on the same line as the checkbox. */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Align the label with the checkbox. */
+.sx-checkbox * {
+    vertical-align: middle;
+}
+
+.sx-checkbox input {
+    /* Reset common input style not usable for checkboxes. */
+    width: auto;
+    min-height: auto;
+    border: none;
+    box-shadow: none;
+}
+
+/* To allow giving it a color. */
+.sx-checkbox label {
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s;
+}
+
+/* Wrapper element to position the labels independent of their DOM position. */
+.sx-input {
+    position: relative;
+    /* Extra space to not have the labels overlap with the next content. */
+    margin-bottom: 3em;
+    /* If used in the actions bar. */
+    background: white;
+}
+
+.sx-input label {
+    position: absolute;
+    white-space: nowrap;
+    /* Position the label right below the start of the input with some space between. */
+    top: 100%;
+    margin-top: .1em;
+    right: 0;
+    left: 0;
+    /* If a combination with small is used, position the small as a tooltip to the right. */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* The tooltip content aligned to the right. */
+.sx-input small {
+    white-space: normal;
+    /* Reset the required labels font-weight. */
+    font-weight: normal;
+    /* Keep space to the real label. */
+    margin-left: 2em;
+}
+
+/* To render multiple checkboxes in a row. */
+.sx-multi {
+    display: flex;
+    flex-wrap: wrap;
+    /* Use the margin on the wrapper to not generate extra space with following margins. */
+    margin-bottom: 1em;
+}
+
+.sx-multi > * {
+    margin: 0 1em 0 0;
+}

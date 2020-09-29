@@ -1,0 +1,89 @@
+.sx-menu {
+    /* The main navigation is always visible at the top of the page. */
+    position: sticky;
+    top: 0;
+    /* To ensure it is on top of all elements. */
+    z-index: 10000;
+    background: var(--primary-color);
+    /* Indicate on top positioning with a shadow. */
+    box-shadow: 0 2px 8px lightgray;
+}
+
+.sx-navigation {
+    /* Use less padding since the buttons inside the navigation do provide extra padding on their own. */
+    padding: 10px 40px;
+    /* Also display with the same size if empty. */
+    height: 60px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sx-navigation-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Adopt the shadow for the navigation buttons. */
+.sx-menu button, .sx-menu a {
+    color: var(--primary-color-inverse);
+    transition: color .2s;
+    text-shadow: 0 0 4px gray;
+    display: inline;
+    margin-left: 10px;
+    /* Since there is no color or button style, use bold to indicate a control. */
+    font-weight: bold;
+    /* Some resets. */
+    padding: 0;
+    font-size: 1em;
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* The hidden (keyboard only) back button inside the menu. */
+.sx-menu :empty {
+    margin: 0;
+}
+
+.sx-menu button:hover, .sx-menu a:hover {
+    color: var(--primary-color-highlight);
+}
+
+.sx-menu :active, .sx-menu :focus {
+    text-shadow: 0 0 2px gray;
+    /* Chrome renders a colored outline. */
+    outline: none;
+}
+
+.sx-loading {
+    color: var(--primary-color-inverse);
+    font-size: 30px;
+    animation: loading 1s infinite;
+    /* Start with the from values. */
+    opacity: 0;
+    transform: scale(.8);
+    /* Only show the animation if loading takes long. */
+    animation-delay: 200ms;
+    justify-self: flex-start;
+}
+
+@keyframes loading {
+    from, to {
+        opacity: 0;
+        transform: scale(.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .sx-navigation {
+        /* Reduce padding as not needed for mobile devices. */
+        padding: 5px 20px;
+    }
+}

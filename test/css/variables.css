@@ -1,0 +1,13 @@
+:root {
+    /* Used for navigations and highlighted (non interactive) parts. */
+    --primary-color: lightblue;
+    --primary-color-highlight: blue;
+    --primary-color-inverse: white;
+    /* Used for interactive parts (buttons and errors). */
+    --secondary-color: red;
+    --secondary-color-highlight: pink;
+    --secondary-color-inverse: white;
+    /* Used for interactive highlights (anchors and focus). */
+    --tertiary-color: green;
+    --tertiary-color-highlight: lightgreen;
+}

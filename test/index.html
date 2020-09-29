@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="sx-layout">
+    <head>
+        <title>sx-css test</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <link type="text/css" href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="sx-body">
+            <nav class="sx-menu">
+                <div class="sx-limit sx-navigation">
+                    <div class="sx-loading">🖧</div>
+                    <div class="sx-navigation-buttons">
+                        <button type="button"></button>
+                        <a href="#">Menu item 1</a>
+                        <button type="button">Menu item 2</button>
+                        <button type="button">Menu item 3</button>
+                    </div>
+                </div>
+            </nav>
+            <main class="sx-container sx-content sx-limit sx-button sx-form sx-table">
+                <div>hidden</div>
+                <div>
+                    <h1>Headline</h1>
+                    <details>
+                        <summary>Summary</summary>
+                        <p>These are the details.</p>
+                    </details>
+                    <p>This is some <a href="#">text</a> with <span class="sx-highlight">highlighted parts.</span></p>
+                    <small>This is some small text.</small>
+                    <h2>Tabs</h2>
+                    <div class="sx-tabs">
+                        <label class="sx-tab sx-selected">
+                            <input type="radio" name="filter" value="1" checked>
+                            Selected tab
+                        </label>
+                        <label class="sx-tab">
+                            <input type="radio" name="filter" value="2">
+                            Another tab
+                        </label>
+                        <label class="sx-tab">
+                            <input type="radio" name="filter" value="2">
+                            Third tab to break mobile
+                        </label>
+                    </div>
+                    <h2>Tables</h2>
+                    <table>
+                        <tr>
+                            <th>
+                                Header 1
+                            </th>
+                            <td>
+                                Content 1
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Header 2
+                            </th>
+                            <td>
+                                Content 2<br/>with line break
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Header 3
+                            </th>
+                            <td>
+                                Content 3
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="sx-list">
+                        <colgroup>
+                            <col/>
+                            <col/>
+                            <col class="sx-action"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Heading 1</th>
+                                <th>Heading 2</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Line 1 Column 1
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="Input" aria-label="Input" name="table-input"/>
+                                </td>
+                                <td>
+                                    <button type="button"><span class="sx-button-icon">✎</span> Action</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Line 2 Column 1
+                                </td>
+                                <td>
+                                    <a href="#">Line 2 Column 2</a>
+                                </td>
+                                <td>
+                                    <button type="button"><span class="sx-button-icon">▽</span> Action</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Line 3 Column 1
+                                </td>
+                                <td>
+                                    Line 3 Column 2
+                                </td>
+                                <td>
+                                    <button type="button"><span class="sx-button-icon">🗑</span> Action</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="sx-actions">
+                        <button><span class="sx-button-icon">＋</span> Button</button>
+                        <div class="sx-fill">
+                            <div class="sx-control">
+                                <input type="search" placeholder="Search" name="search" aria-label="Search"/>
+                                <button type="submit"><span class="sx-button-icon">⌕</span> Search</button>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Forms</h2>
+                    <form>
+                        <p class="sx-error">This is an error message.</p>
+                        <div class="sx-input">
+                            <input type="text" id="text" name="text"/>
+                            <label for="text">Text</label>
+                        </div>
+                        <div class="sx-control">
+                            <div class="sx-input">
+                                <input type="text" id="text-required" name="text" required/>
+                                <label for="text-required">Required text</label>
+                            </div>
+                            <button type="button"><span class="sx-button-icon">＋</span> Action</button>
+                        </div>
+                        <div class="sx-input">
+                            <textarea id="textarea" name="textarea"></textarea>
+                            <label for="textarea">Textarea</label>
+                        </div>
+                        <div class="sx-actions">
+                            <button><span class="sx-button-icon">✔</span> Button 1</button>
+                            <button><span class="sx-button-icon">🖫</span> Button 2 to break mobile</button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
