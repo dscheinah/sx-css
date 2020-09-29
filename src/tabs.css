@@ -1,19 +1,11 @@
 /* The tabs overlap with the details if not corrected. */
 .sx-tabs {
     padding-top: .5em;
+    display: flex;
 }
 
-/* Clear the float. */
-.sx-tabs:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Indicate tabs. */
 .sx-tab {
-    float: left;
-    /* Needs extra bottom spacing to not overlap the labels padding. */
+    /* Needs extra bottom spacing to not overlap the padding. */
     margin: 0 .5em 1.5em 0;
     padding: .5em;
     font-family: sans-serif;

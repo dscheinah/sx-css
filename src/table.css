@@ -21,7 +21,7 @@
     width: 100%;
 }
 
-/* Use a separator on the rows of a list table. List tables are indicates by having a thead. */
+/* Use a separator on the rows of a list table.  */
 .sx-list tr:not(:first-child) td {
     border-top: 1px solid lightgray;
 }

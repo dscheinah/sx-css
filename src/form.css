@@ -27,6 +27,21 @@
     min-width: 100%;
 }
 
+.sx-form label {
+    margin: .1em 0 2em;
+    /* If a combination with small is used, position the small as a tooltip to the right. */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* The tooltip content aligned to the right. */
+.sx-form label small {
+    /* Reset the required labels font-weight. */
+    font-weight: normal;
+    /* Keep space to the real label. */
+    margin-left: 2em;
+}
+
 /* Indicate required fields by a bold label. This assumes labels are positioned after the input. */
 .sx-form [required] + label {
     font-weight: bold;
@@ -56,19 +71,14 @@
 
 /* Do not use the input type to be flexible with e.g. radio. */
 .sx-checkbox {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     /* Do never wrap the label and keep it on the same line as the checkbox. */
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-/* Align the label with the checkbox. */
-.sx-checkbox * {
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
 }
 
 .sx-checkbox input {
+    margin: 0 .5em 0 0;
     /* Reset common input style not usable for checkboxes. */
     width: auto;
     min-height: auto;
@@ -76,41 +86,11 @@
     box-shadow: none;
 }
 
-/* To allow giving it a color. */
 .sx-checkbox label {
+    margin-bottom: 0;
+    /* To allow giving it a color. */
     border-bottom: 1px solid transparent;
     transition: border-color .2s;
-}
-
-/* Wrapper element to position the labels independent of their DOM position. */
-.sx-input {
-    position: relative;
-    /* Extra space to not have the labels overlap with the next content. */
-    margin-bottom: 3em;
-    /* If used in the actions bar. */
-    background: white;
-}
-
-.sx-input label {
-    position: absolute;
-    white-space: nowrap;
-    /* Position the label right below the start of the input with some space between. */
-    top: 100%;
-    margin-top: .1em;
-    right: 0;
-    left: 0;
-    /* If a combination with small is used, position the small as a tooltip to the right. */
-    display: flex;
-    justify-content: space-between;
-}
-
-/* The tooltip content aligned to the right. */
-.sx-input small {
-    white-space: normal;
-    /* Reset the required labels font-weight. */
-    font-weight: normal;
-    /* Keep space to the real label. */
-    margin-left: 2em;
 }
 
 /* To render multiple checkboxes in a row. */
@@ -118,7 +98,7 @@
     display: flex;
     flex-wrap: wrap;
     /* Use the margin on the wrapper to not generate extra space with following margins. */
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 .sx-multi > * {

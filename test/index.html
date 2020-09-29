@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </nav>
-            <main class="sx-container sx-content sx-limit sx-button sx-form sx-table">
+            <main class="sx-container sx-content sx-limit sx-button sx-table">
                 <div>hidden</div>
                 <div>
                     <h1>Headline</h1>
@@ -71,7 +71,7 @@
                             </td>
                         </tr>
                     </table>
-                    <table class="sx-list">
+                    <table class="sx-list sx-form">
                         <colgroup>
                             <col/>
                             <col/>
@@ -120,7 +120,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="sx-actions">
+                    <div class="sx-actions sx-form">
                         <button><span class="sx-button-icon">＋</span> Button</button>
                         <div class="sx-fill">
                             <div class="sx-control">
@@ -130,23 +130,19 @@
                         </div>
                     </div>
                     <h2>Forms</h2>
-                    <form>
+                    <form class="sx-form">
                         <p class="sx-error">This is an error message.</p>
-                        <div class="sx-input">
-                            <input type="text" id="text" name="text"/>
-                            <label for="text">Text</label>
-                        </div>
+                        <input type="text" id="text" name="text"/>
+                        <label for="text">Text</label>
                         <div class="sx-control">
-                            <div class="sx-input">
+                            <div>
                                 <input type="text" id="text-required" name="text" required/>
                                 <label for="text-required">Required text</label>
                             </div>
                             <button type="button"><span class="sx-button-icon">＋</span> Action</button>
                         </div>
-                        <div class="sx-input">
-                            <textarea id="textarea" name="textarea"></textarea>
-                            <label for="textarea">Textarea</label>
-                        </div>
+                        <textarea id="textarea" name="textarea"></textarea>
+                        <label for="textarea">Textarea</label>
                         <div class="sx-actions">
                             <button><span class="sx-button-icon">✔</span> Button 1</button>
                             <button><span class="sx-button-icon">🖫</span> Button 2 to break mobile</button>
