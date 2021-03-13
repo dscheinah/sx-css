@@ -36,6 +36,9 @@
 
 .sx-button-icon {
     margin-right: .3em;
+    /* There must not be color in UTF8 icons to fit into the color scheme. */
+    filter: grayscale(1);
+    font-weight: bold;
 }
 
 /* To position buttons on the same line as other contents use a control wrapper. */
