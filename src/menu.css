@@ -31,7 +31,7 @@
     transition: color .2s;
     text-shadow: 0 0 4px gray;
     display: inline;
-    margin-left: 10px;
+    margin-left: 2em;
     /* Since there is no color or button style, use bold to indicate a control. */
     font-weight: bold;
     /* Some resets. */
