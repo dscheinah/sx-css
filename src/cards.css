@@ -1,0 +1,26 @@
+.sx-cards {
+    display: flex;
+    flex-wrap: wrap;
+    /* Gap between but not around without hacks but with less browser support. */
+    gap: 2em;
+}
+
+.sx-card {
+    /* Reset for elements with default margins. */
+    margin: 0;
+    /* Stretch a line to full with. */
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 1em 2em;
+    box-shadow: 1px 1px 8px lightgray;
+    /* Equal alignment of inside elements across cards on the same row. */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.sx-card > * {
+    /* Force margins for all elements to better fit into the flex context. */
+    margin: .5em 0;
+}
