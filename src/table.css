@@ -67,7 +67,7 @@
         width: 100%;
     }
     /* Allow breaking of long words. */
-    .sx-table td {
+    .sx-table td, .sx-table th {
         hyphens: auto;
         word-break: break-all;
     }

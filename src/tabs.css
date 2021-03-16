@@ -2,11 +2,12 @@
 .sx-tabs {
     padding-top: .5em;
     display: flex;
+    flex-wrap: wrap;
 }
 
-.sx-tab {
+.sx-tab.sx-tab {
     /* Needs extra bottom spacing to not overlap the padding. */
-    margin: 0 .5em 1.5em 0;
+    margin: 0 .5em 1em 0;
     padding: .5em;
     font-family: sans-serif;
     /* To position the input inside the label. */
