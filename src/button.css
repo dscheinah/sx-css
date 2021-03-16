@@ -34,6 +34,16 @@
     outline: none;
 }
 
+/* Disabled buttons always appear without color. */
+.sx-button button:disabled, .sx-button button:disabled:hover {
+    background: none;
+    color: inherit;
+    cursor: default;
+    opacity: .5;
+    /* Reset active and focus. */
+    box-shadow: 1px 1px 4px lightgray;
+}
+
 .sx-button-icon {
     margin-right: .3em;
     /* There must not be color in UTF8 icons to fit into the color scheme. */
@@ -74,7 +84,7 @@
     margin: 1.5em -.3em 0;
     /* Some spacing to the remaining content. */
     /* Add some extra right padding to align with tables. */
-    padding: .5em .9em 0 .3em;
+    padding: .5em .9em .5em .3em;
 }
 
 /* Fade out the other content if the actions are in fixed mode of sticky. */
@@ -86,8 +96,8 @@
     right: 0;
     left: 0;
     bottom: 0;
-    /* At 50% the start of the actions is reached. So the actions background appears white. */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+    /* At 2em the start of the actions is reached. So the actions background appears white. */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 2em);
 }
 
 /* All buttons inside the actions must be relative to have the z-index raised above the pseudo:before. */
