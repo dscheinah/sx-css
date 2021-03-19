@@ -97,10 +97,17 @@
 .sx-multi {
     display: flex;
     flex-wrap: wrap;
+    /* Gap between but not around without hacks but with less browser support. */
+    gap: 1em;
     /* Use the margin on the wrapper to not generate extra space with following margins. */
     margin-bottom: 1.5em;
 }
 
-.sx-multi > * {
-    margin: 0 1em 0 0;
+/* Margins and gaps are controlled by the wrapper. */
+.sx-multi > *, .sx-multi label {
+    margin: 0;
+}
+
+.sx-input {
+    flex: 1 1 auto;
 }

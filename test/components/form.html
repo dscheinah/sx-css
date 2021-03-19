@@ -20,10 +20,16 @@
                 Password
                 <small>(this is a hint which takes quite some space)</small>
             </label>
-            <input type="email" id="email" name="email"/>
-            <label for="email">E-Mail</label>
-            <input type="number" id="number" name="number"/>
-            <label for="number">Number</label>
+            <div class="sx-multi">
+                <div class="sx-input">
+                    <input type="email" id="email" name="email"/>
+                    <label for="email">E-Mail</label>
+                </div>
+                <div class="sx-input">
+                    <input type="number" id="number" name="number"/>
+                    <label for="number">Number</label>
+                </div>
+            </div>
             <select id="select" name="select">
                 <option value=""></option>
                 <option value="1">Option 1</option>
