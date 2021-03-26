@@ -9,8 +9,8 @@
     white-space: nowrap;
     /* Fix the line-height to make the padding appear equal. */
     line-height: 1;
-    /* Buttons side by side have a default spacing, but if they break on mobile devices there is none. */
-    margin-bottom: .3em;
+    /* Buttons side by side (and break on mobile) should have a spacing. */
+    margin: 0 .3em .3em 0;
     /* Indicate a control by shadow. */
     box-shadow: 1px 1px 4px lightgray;
     /* Use the colors from variables. */
