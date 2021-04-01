@@ -69,7 +69,7 @@
     /* Allow breaking of long words. */
     .sx-table td, .sx-table th {
         hyphens: auto;
-        word-break: break-all;
+        word-break: break-word;
     }
     /* Only use icons to reduce the needed size. This is completed in button.css. */
     .sx-table table button {
